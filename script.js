@@ -29,7 +29,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     // SET input that GET User input
-    return prompt(`Choose from Rock, Paper and Scissor: `)
+    return prompt(`Choose from Rock, Paper and Scissor: `).toLowerCase()
 
 }
 
@@ -58,14 +58,14 @@ function playRound(humanChoice, computerChoice) {
     } else if (humanChoice == "paper" && computerChoice == "rock") {
         alert("You Win! Paper beats Rock.")
         ++humanScore;
-    } else if (humanChoice == "rock" && computerChoice == "paper") {
-        alert("You lose! Paper beats Rock.")
+    } else if (humanChoice == "scissor" && computerChoice == "paper") {
+        alert("You Win! Scissor beats Paper.")
+        ++humanScore;
+    } else if (humanChoice == "scissor" && computerChoice == "rock") {
+        alert("You Lose! Rock beats Scissor.")
         ++computerScore;
-    } else if (humanChoice == "rock" && computerChoice == "scissor") {
-        alert("You Win! Rock beats Scissor.")
     } else if (humanChoice == computerChoice) {
         alert("It's a draw!")
-        ++humanScore;
     } else {alert("Invalid input!")}
     
 }
