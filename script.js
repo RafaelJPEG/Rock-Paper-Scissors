@@ -26,15 +26,11 @@ function getComputerChoice() {
 }
 console.log(getComputerChoice())
 
-// CREATE function that GET User input
+// CREATE function that DISPLAY rock, paper and scissor as input choices and store it.
 
 function getHumanChoice() {
     // SET input that GET User input
-    let userInput = prompt(``)
-    // SET Conditions that OUTPUT valid choices
-    if (userInput == "1") {
-        console.log("correct")
-    }
+    let userInput = prompt(``.toLowerCase())
 
 }
 
@@ -55,14 +51,16 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice == "rock" && computerChoice == "paper") {
         alert("You lose! Paper beats Rock.")
         ++computerScore;
+    } else if (humanChoice == "rock" && computerChoice == "scissor") {
+        alert("You Win! rock beats scissor.")
+    } else if (humanChoice == "paper" && computerChoice == "scissor") {
+        alert("You lose! scissor beats Paper.")
+    } else if (humanChoice == "paper" && computerChoice == "rock") {
+        alert("You Win! Paper beats Rock.")
     } else if (humanChoice == "rock" && computerChoice == "paper") {
         alert("You lose! Paper beats Rock.")
-    } else if (humanChoice == "rock" && computerChoice == "paper") {
-        alert("You lose! Paper beats Rock.")
-    } else if (humanChoice == "rock" && computerChoice == "paper") {
-        alert("You lose! Paper beats Rock.")
-    } else if (humanChoice == "rock" && computerChoice == "paper") {
-        alert("You lose! Paper beats Rock.")
+    } else if (humanChoice == "rock" && computerChoice == "scissor") {
+        alert("You Win! Rock beats Scissor.")
     } else if (humanChoice == computerChoice) {
         alert("It's a draw!")
     } else {alert("Invalid input!")}
@@ -72,7 +70,10 @@ function playRound(humanChoice, computerChoice) {
 // CREATE a function that CALLS playRound 5 times
 
 function playGame() {
+    playRound(getHumanChoice(), getComputerChoice())
     playRound(getHumanChoice(),getComputerChoice())
 }
 
 alert(playGame())
+
+console.log(computerScore)
