@@ -1,5 +1,3 @@
-console.log("Hello World!")
-
 //PROBLEM: task : create a rock-paper-scissor game that get your input compare it to the random value it gives and dislay or out put if your input win or no.
 // ALGORITHM:
 // 1.CREATE an input form to collect value
@@ -29,7 +27,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     // SET input that GET User input
-    return prompt(`Choose from Rock, Paper and Scissor: `).toLowerCase()
+    return prompt(`5 ROUNDS \n Choose from Rock, Paper and Scissor: `).toLowerCase()
 
 }
 
@@ -87,6 +85,5 @@ function playGame() {
     }
 
 }
-
 
 playGame()
