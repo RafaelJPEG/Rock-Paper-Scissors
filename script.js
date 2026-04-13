@@ -76,8 +76,11 @@ function playGame() {
 
     playRound(getHumanChoice(), getComputerChoice())
     // IF humanchoice win INCREMENT humanScore and display it ELSE IF computerChoice wins INCREMENT compuerScore
-    console.log(computerScore)
-    console.log(humanScore)
+    if (humanScore > computerScore) {
+        alert(`CONGRATULATIONS! You Won the Game! \n Your Score: ${humanScore} \n Computer Score: ${computerScore} \n Winner: You! with score of ${humanScore}`)
+    } else {
+        alert(`You Lose the Game! \n Your Score: ${humanScore} \n Computer Score: ${computerScore} \n Winner: Computer! with score of ${humanScore}`)
+    }
 
 }
 
