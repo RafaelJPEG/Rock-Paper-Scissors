@@ -24,13 +24,12 @@ function getComputerChoice() {
     }
     
 }
-console.log(getComputerChoice())
 
 // CREATE function that DISPLAY rock, paper and scissor as input choices and store it.
 
 function getHumanChoice() {
     // SET input that GET User input
-    let userInput = prompt(``.toLowerCase())
+    return prompt(`Choose from Rock, Paper and Scissor: `)
 
 }
 
@@ -39,7 +38,6 @@ function getHumanChoice() {
 
 // CREATE a variable for humanScore
 let humanScore = 0
-// CREATE a variable for computerScore
 let computerScore = 0
 
 // Your game will be played round by round. You will write a function that takes the human and computer player choices as
@@ -53,27 +51,35 @@ function playRound(humanChoice, computerChoice) {
         ++computerScore;
     } else if (humanChoice == "rock" && computerChoice == "scissor") {
         alert("You Win! rock beats scissor.")
+        ++humanScore;
     } else if (humanChoice == "paper" && computerChoice == "scissor") {
         alert("You lose! scissor beats Paper.")
+        ++computerScore;
     } else if (humanChoice == "paper" && computerChoice == "rock") {
         alert("You Win! Paper beats Rock.")
+        ++humanScore;
     } else if (humanChoice == "rock" && computerChoice == "paper") {
         alert("You lose! Paper beats Rock.")
+        ++computerScore;
     } else if (humanChoice == "rock" && computerChoice == "scissor") {
         alert("You Win! Rock beats Scissor.")
     } else if (humanChoice == computerChoice) {
         alert("It's a draw!")
+        ++humanScore;
     } else {alert("Invalid input!")}
     
 }
 
-// CREATE a function that CALLS playRound 5 times
+// CREATE a function that CALLS playRound 5 times and display the winner.
 
 function playGame() {
+
     playRound(getHumanChoice(), getComputerChoice())
-    playRound(getHumanChoice(),getComputerChoice())
+    // IF humanchoice win INCREMENT humanScore and display it ELSE IF computerChoice wins INCREMENT compuerScore
+    console.log(computerScore)
+    console.log(humanScore)
+
 }
 
-alert(playGame())
 
-console.log(computerScore)
+playGame()
